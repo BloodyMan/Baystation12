@@ -722,7 +722,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/fatsausage
 	name = "fat sausage"
-	desc = "A piece of mixed, long meat with some bite to it."
+	desc = "A piece of mixed, long meat, with some bite to it."
 	icon_state = "sausage"
 	filling_color = "#db0000"
 	center_of_mass = "x=16;y=16"
@@ -730,6 +730,11 @@
 /obj/item/weapon/reagent_containers/food/snacks/fatsausage/New()
 	..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 8)
+	bitesize = 2
+
+/obj/item/weapon/reagent_containers/food/snacks/sausage/smoked/New()
+	..()
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 6)
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/donkpocket/sinpocket

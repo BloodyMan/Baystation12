@@ -234,7 +234,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(lit)
 		overlays += overlay_image(icon, "cigarello-on", flags=RESET_COLOR)
 
-/obj/item/clothing/mask/smokable/cigarette/die(var/nomessage = 0)
+/obj/item/clothing/mask/smokable/die(var/nomessage = 0)
 	..()
 	if (type_butt)
 		var/obj/item/butt = new type_butt(get_turf(src))
@@ -454,6 +454,132 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	user.update_inv_l_hand(0)
 	user.update_inv_r_hand(1)
 
+/////////// //Ported Straight from TG. I am not sorry. - BloodyMan
+//ROLLING//
+///////////
+/obj/item/paper/cig
+	name = "rolling paper"
+	desc = "A thin piece of paper used to make smokeables."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "cig_paper"
+	w_class = ITEM_SIZE_TINY
+
+/obj/item/paper/cig/fancy
+	name = "\improper Trident rolling paper"
+	desc = "A thin piece of trident branded paper used to make fine smokeables."
+	icon_state = "cig_paperf"
+
+/obj/item/paper/cig/filter
+	name = "cigarette filter"
+	desc = "A small nub like filter for cigarettes."
+	icon_state = "cig_filter"
+	w_class = ITEM_SIZE_TINY
+
+
+//crafting a filter into the existing rollie
+/obj/item/paper/cig/filter/afterattack(atom/target, mob/user, proximity)
+	if(!proximity)
+		return
+	if(istype(target, /obj/item/clothing/mask/smokable/cigarette/rolled))
+		var/obj/item/clothing/mask/smokable/cigarette/rolled/filtered/R = new(user.loc)
+		R.chem_volume = target.reagents.total_volume
+		target.reagents.trans_to_holder(R.reagents, R.chem_volume)
+		qdel(target)
+		qdel(src)
+		user.put_in_active_hand(R)
+		to_chat(user, "<span class='notice'>You roll the filter into the rolled cigarette.</span>")
+		R.desc = "A [target.name] with a filter."
+	else
+		..()
+
+//cig paper interaction ported straight from TG with some adjustments for our derelict code
+/obj/item/paper/cig/afterattack(atom/target, mob/user, proximity)
+	if(!proximity)
+		return
+	if(istype(target, /obj/item/weapon/reagent_containers/food/snacks/grown))
+		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = target
+		if(G.dry)
+			var/obj/item/clothing/mask/smokable/cigarette/rolled/R = new(user.loc)
+			R.chem_volume = target.reagents.total_volume
+			target.reagents.trans_to_holder(R.reagents, R.chem_volume)
+			qdel(target)
+			qdel(src)
+			user.put_in_active_hand(R)
+			to_chat(user, "<span class='notice'>You roll the [target.name] into a rolling paper.</span>")
+			R.desc = "A [target.name] rolled up in a thin piece of paper."
+		else
+			to_chat(user, "<span class='warning'>You need to dry this first!</span>")
+	else
+		..()
+
+//and if you are a savage you can just use a sheet of ordinary paper.
+/obj/item/weapon/paper/afterattack(atom/target, mob/user, proximity)
+	if(!proximity)
+		return
+	if(istype(target, /obj/item/weapon/reagent_containers/food/snacks/grown))
+		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = target
+		if(G.dry)
+			var/obj/item/clothing/mask/smokable/cigarette/rolled/R = new(user.loc)
+			R.chem_volume = target.reagents.total_volume
+			target.reagents.trans_to_holder(R.reagents, R.chem_volume)
+			qdel(target)
+			qdel(src)
+			user.put_in_active_hand(R)
+			to_chat(user, "<span class='notice'>You roll the [target.name] into a regular sheet of paper. How bold.</span>")
+			R.desc = "A [target.name] rolled up in a piece of office paper. How bold."
+		else
+			to_chat(user, "<span class='warning'>You need to dry this first!</span>")
+	else
+		..()
+
+// Rollies.
+
+/obj/item/clothing/mask/smokable/cigarette/rolled
+	name = "rolled cigarette"
+	desc = "A hand rolled cigarette using dried plant matter."
+
+	icon_state = "cigroll"
+	item_state = "cigoff"
+//	icon_on "cigon"
+	type_butt = /obj/item/weapon/cigbutt/rollbutt
+	chem_volume = 50
+	brand = "handrolled"
+	filling = list()
+
+/obj/item/clothing/mask/smokable/cigarette/rolled/filtered
+	name = "filtered rolled cigarette"
+	desc = "A hand rolled cigarette using dried plant matter. Capped off one end with a filter."
+	icon_state = "cigoff"
+	item_state = "cigoff"
+
+	type_butt = /obj/item/weapon/cigbutt/rollbutt
+	brand = "handrolled with a filter"
+
+/obj/item/weapon/cigbutt/rollbutt
+	name = "cigarette butt"
+	desc = "A cigarette butt."
+	icon_state = "rollbutt"
+
+//Bizarre
+
+/obj/item/clothing/mask/smokable/cigarette/rolled/sausage
+	name = "sausage"
+	desc = "A piece of mixed, long meat, with a smoky scent."
+	icon_state = "cigar3off"
+
+	item_state = "cigaroff"
+	icon_on = "cigar3on"
+	type_butt = /obj/item/weapon/cigbutt/sausagebutt
+	chem_volume = 6
+	smoketime = 5000
+	brand = "sausage... wait what."
+	filling = list(/datum/reagent/nutriment/protein = 6)
+
+/obj/item/weapon/cigbutt/sausagebutt
+	name = "sausage butt"
+	desc = "A piece of burnt meat."
+	icon_state = "sausagebutt"
+
 /////////////////
 //SMOKING PIPES//
 /////////////////
@@ -557,6 +683,108 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "cobpipeoff"
 	icon_on = "cobpipeon"  //Note - these are in masks.dmi
 	chem_volume = 35
+
+///////////////////////
+//DIP, SNUFF and CHEW//
+///////////////////////
+
+/obj/item/clothing/mask/chewable
+	name = "chewable item"
+	desc = "You're not sure what this is. You should probably ahelp it."
+	body_parts_covered = 0
+//	var/lit = 0
+//	var/icon_on
+	var/type_butt = null
+	var/chem_volume = 0
+	var/chewtime = 0
+	var/brand
+
+obj/item/clothing/mask/chewable/New()
+	..()
+	atom_flags |= ATOM_FLAG_NO_REACT // so it doesn't react until you light it
+	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 15
+
+//obj/item/clothing/mask/chewable/Destroy()
+//	. = ..()
+//	if(lit)
+//		STOP_PROCESSING(SSobj, src)
+
+/obj/item/clothing/mask/chewable/proc/chew(amount)
+	chewtime -= amount
+	if(reagents && reagents.total_volume) // check if it has any reagents at all
+		if(ishuman(loc))
+			var/mob/living/carbon/human/C = loc
+			if (src == C.wear_mask && C.check_has_mouth()) // if it's in the human/monkey mouth, transfer reagents to the mob
+				STOP_PROCESSING(SSobj, src)
+				reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2) // Most of it is not inhaled... balance reasons.
+		else // else just remove some of the reagents
+			reagents.remove_any(REM)
+
+/obj/item/clothing/mask/chewable/Process()
+//	var/turf/location = get_turf(src)
+	chew(1)
+	if(chewtime < 1)
+		die()
+		return
+
+/obj/item/clothing/mask/chewable/proc/die(var/nomessage = 0)
+//	set_light(0)
+//	lit = 0
+	STOP_PROCESSING(SSobj, src)
+	update_icon()
+
+/obj/item/clothing/mask/chewable
+	name = "wad"
+	desc = "A chewy wad of nothing."
+	throw_speed = 0.5
+	icon = 'icons/obj/clothing/masks.dmi'
+	icon_state = "wad"
+
+	w_class = ITEM_SIZE_TINY
+	slot_flags = SLOT_EARS | SLOT_MASK
+	type_butt = /obj/item/weapon/cigbutt/spitwad
+	chem_volume = 50
+	chewtime = 300
+	brand = "generic"
+	var/list/filling = list(/datum/reagent/tobacco = 6)
+
+
+/obj/item/weapon/cigbutt/spitwad
+	name = "spit wad"
+	desc = "A disgusting spitwad."
+	icon_state = "spit-wad"
+
+
+/obj/item/clothing/mask/chewable/die(var/nomessage = 0)
+	..()
+	if (type_butt)
+		var/obj/item/butt = new type_butt(get_turf(src))
+		transfer_fingerprints_to(butt)
+		butt.color = color
+		if(brand)
+			butt.desc += " This one is \a [brand]."
+		if(ismob(loc))
+			var/mob/living/M = loc
+			if (!nomessage)
+				to_chat(M, "<span class='notice'>Your [name] is spat out.</span>")
+			M.remove_from_mob(src) //un-equip it so the overlays can update
+		qdel(src)
+
+/obj/item/clothing/mask/chewable/lenni
+	name = "chewing tobacco"
+	desc = "A chewy wad of tobacco."
+	icon = 'icons/obj/clothing/masks.dmi'
+	icon_state = "chew"
+	filling = list(/datum/reagent/tobacco = 2)
+	brand = "generic"
+
+/obj/item/clothing/mask/chewable/redlady
+	name = "chewing tobacco"
+	desc = "A chewy wad of tobacco."
+	icon = 'icons/obj/clothing/masks.dmi'
+	icon_state = "chew"
+	filling = list(/datum/reagent/tobacco/fine = 2)
+	brand = "fine"
 
 /////////
 //ZIPPO//
