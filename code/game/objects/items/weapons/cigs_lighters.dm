@@ -689,8 +689,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 ///////////////////////
 
 /obj/item/clothing/mask/chewable
-	name = "chewable item"
+	name = "chewable item master"
 	desc = "You're not sure what this is. You should probably ahelp it."
+	icon = 'icons/obj/clothing/masks.dmi'
 	body_parts_covered = 0
 //	var/lit = 0
 //	var/icon_on
@@ -744,10 +745,9 @@ obj/item/clothing/mask/chewable/Destroy()
 
 /obj/item/clothing/mask/chewable/tobacco
 	name = "wad"
-	desc = "A chewy wad of nothing."
+	desc = "A chewy wad of terbecco."
 	throw_speed = 0.5
-	icon = 'icons/obj/clothing/masks.dmi'
-	icon_state = "wad"
+	icon_state = "chew"
 	type_butt = /obj/item/weapon/cigbutt/spitwad
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS | SLOT_MASK
@@ -781,27 +781,48 @@ obj/item/clothing/mask/chewable/Destroy()
 /obj/item/clothing/mask/chewable/tobacco/lenni
 	name = "chewing tobacco"
 	desc = "A chewy wad of tobacco."
-	icon = 'icons/obj/clothing/masks.dmi'
-	icon_state = "chew"
+
+
 	filling = list(/datum/reagent/tobacco = 8)
 	brand = "generic"
 
 /obj/item/clothing/mask/chewable/tobacco/redlady
 	name = "chewing tobacco"
 	desc = "A chewy wad of fine tobacco."
-	icon = 'icons/obj/clothing/masks.dmi'
-	icon_state = "chew"
+
+
 	filling = list(/datum/reagent/tobacco/fine = 8)
 	brand = "fine"
 
-/obj/item/clothing/mask/chewable/candy/
-	name = "chewing tobacco"
-	desc = "A chewy wad of fine tobacco."
-	icon = 'icons/obj/clothing/masks.dmi'
+
+/obj/item/clothing/mask/chewable/candy
+	name = "wad"
+	desc = "A chewy wad of wadding material."
+	throw_speed = 0.5
 	icon_state = "chew"
+	type_butt = /obj/item/weapon/cigbutt/spitgum
+	w_class = ITEM_SIZE_TINY
+	slot_flags = SLOT_EARS | SLOT_MASK
+	chem_volume = 50
+	chewtime = 300
+	brand = "wad"
+	var/list/filling = list()
+
+/obj/item/clothing/mask/chewable/candy/gum
+	name = "chewing gum"
+	desc = "A chewy wad of fine sugar."
+
+	icon_state = "gum"
 	filling = list(/datum/reagent/sugar = 2)
 	brand = "fine"
 
+/obj/item/clothing/mask/chewable/candy/lolli
+	name = "lollipop"
+	desc = "A chewy wad of fine sugar."
+
+	icon_state = "gum"
+	filling = list(/datum/reagent/sugar = 2)
+	brand = "fine"
 
 
 
