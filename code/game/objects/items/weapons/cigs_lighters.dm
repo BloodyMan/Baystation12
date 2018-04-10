@@ -699,11 +699,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/chem_volume = 0
 	var/chewtime = 0
 	var/brand
+	var/list/filling = list()
 
 obj/item/clothing/mask/chewable/New()
 	..()
 	atom_flags |= ATOM_FLAG_NO_REACT // so it doesn't react until you light it
 	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 15
+	for(var/R in filling)
+		reagents.add_reagent(R, filling[R])
 
 /obj/item/clothing/mask/chewable/equipped()
 	START_PROCESSING(SSobj, src)
@@ -753,14 +756,19 @@ obj/item/clothing/mask/chewable/Destroy()
 	slot_flags = SLOT_EARS | SLOT_MASK
 	chem_volume = 50
 	chewtime = 300
-	brand = "generic"
-	var/list/filling = list()
+	brand = "tobacco"
 
+
+/obj/item/clothing/mask/chewable/tobacco/New()
+    ..()
+    for(var/R in filling)
+        reagents.add_reagent(R, filling[R])
 
 /obj/item/weapon/cigbutt/spitwad
 	name = "spit wad"
 	desc = "A disgusting spitwad."
 	icon_state = "spit-chew"
+
 
 
 /obj/item/clothing/mask/chewable/die(var/nomessage = 0)
@@ -781,18 +789,14 @@ obj/item/clothing/mask/chewable/Destroy()
 /obj/item/clothing/mask/chewable/tobacco/lenni
 	name = "chewing tobacco"
 	desc = "A chewy wad of tobacco."
+	filling = list(/datum/reagent/tobacco = 2)
 
-
-	filling = list(/datum/reagent/tobacco = 8)
-	brand = "generic"
 
 /obj/item/clothing/mask/chewable/tobacco/redlady
 	name = "chewing tobacco"
 	desc = "A chewy wad of fine tobacco."
+	filling = list(/datum/reagent/tobacco/fine = 2)
 
-
-	filling = list(/datum/reagent/tobacco/fine = 8)
-	brand = "fine"
 
 
 /obj/item/clothing/mask/chewable/candy
@@ -806,7 +810,7 @@ obj/item/clothing/mask/chewable/Destroy()
 	chem_volume = 50
 	chewtime = 300
 	brand = "wad"
-	var/list/filling = list()
+
 
 /obj/item/weapon/cigbutt/spitgum
 	name = "old gum"
