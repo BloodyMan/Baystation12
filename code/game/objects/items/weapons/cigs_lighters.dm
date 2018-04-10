@@ -749,10 +749,8 @@ obj/item/clothing/mask/chewable/Destroy()
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "wad"
 	type_butt = /obj/item/weapon/cigbutt/spitwad
-
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS | SLOT_MASK
-	type_butt = /obj/item/weapon/cigbutt/spitwad
 	chem_volume = 50
 	chewtime = 300
 	brand = "generic"
@@ -762,7 +760,7 @@ obj/item/clothing/mask/chewable/Destroy()
 /obj/item/weapon/cigbutt/spitwad
 	name = "spit wad"
 	desc = "A disgusting spitwad."
-	icon_state = "spit-wad"
+	icon_state = "spit-chew"
 
 
 /obj/item/clothing/mask/chewable/die(var/nomessage = 0)
@@ -785,7 +783,7 @@ obj/item/clothing/mask/chewable/Destroy()
 	desc = "A chewy wad of tobacco."
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "chew"
-	filling = list(/datum/reagent/tobacco = 2)
+	filling = list(/datum/reagent/tobacco = 8)
 	brand = "generic"
 
 /obj/item/clothing/mask/chewable/tobacco/redlady
@@ -793,7 +791,7 @@ obj/item/clothing/mask/chewable/Destroy()
 	desc = "A chewy wad of fine tobacco."
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "chew"
-	filling = list(/datum/reagent/tobacco/fine = 2)
+	filling = list(/datum/reagent/tobacco/fine = 8)
 	brand = "fine"
 
 /////////
