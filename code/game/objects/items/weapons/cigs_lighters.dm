@@ -794,6 +794,19 @@ obj/item/clothing/mask/chewable/Destroy()
 	filling = list(/datum/reagent/tobacco/fine = 8)
 	brand = "fine"
 
+/obj/item/clothing/mask/chewable/candy/
+	name = "chewing tobacco"
+	desc = "A chewy wad of fine tobacco."
+	icon = 'icons/obj/clothing/masks.dmi'
+	icon_state = "chew"
+	filling = list(/datum/reagent/sugar = 2)
+	brand = "fine"
+
+
+
+
+
+
 /////////
 //ZIPPO//
 /////////

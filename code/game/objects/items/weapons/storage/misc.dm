@@ -93,7 +93,8 @@
 	throwforce = 2
 	slot_flags = SLOT_BELT
 
-	startswith = list(/obj/item/clothing/mask/chewable = 8)
+	startswith = list(/obj/item/clothing/mask/chewable/tobacco = 8)
+	make_exact_fit()
 
 
 /obj/item/weapon/storage/chewables/tobacco
@@ -101,6 +102,7 @@
 	desc = "A generic brand of chewing tobacco, Popular on the rimworlds."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "chew_levi"
+
 
 	startswith = list(/obj/item/clothing/mask/chewable/tobacco/lenni = 8)
 
