@@ -92,24 +92,41 @@
 	max_storage_space = 8
 	throwforce = 2
 	slot_flags = SLOT_BELT
-
 	startswith = list(/obj/item/clothing/mask/chewable/tobacco = 8)
 	make_exact_fit()
 
 
 /obj/item/weapon/storage/chewables/tobacco
-	name = "Lenny's chewing tobacco"
-	desc = "A generic brand of chewing tobacco, Popular on the rimworlds."
-	icon = 'icons/obj/cigarettes.dmi'
+	name = "\improper Lenny's chewing tobacco"
+	desc = "A generic brand of chewing tobacco, for when you can't even be assed to light up."
 	icon_state = "chew_levi"
-
+	item_state = "Dpacket"
 
 	startswith = list(/obj/item/clothing/mask/chewable/tobacco/lenni = 8)
 
 /obj/item/weapon/storage/chewables/tobacco2
 	name = "\improper RougeLady chewing tobacco"
 	desc = "A finer grade of chewing tobacco, fit for a woman. Whom chews tobacco."
-	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "chew_redman"
 
 	startswith = list(/obj/item/clothing/mask/chewable/tobacco/redlady = 8)
+
+/obj/item/weapon/storage/chewables/tobacco3
+	name = "\improper Nico Tine Gum"
+	desc = "Cut out the middleman for your addiction fix."
+	icon_state = "chew_nico"
+
+	startswith = list(/obj/item/clothing/mask/chewable/tobacco/nico = 8)
+
+
+/obj/item/weapon/storage/chewables/candy
+	name = "master candy box, courtesy of candy cadet"
+	desc = "a master type so I don't have to define where to derive the icons every time"
+	icon = 'icons/obj/food.dmi'
+
+/obj/item/weapon/storage/chewables/candy/cookies
+	name = "\improper Getmore Cookies"
+	desc = "A pack of delicious cookies, and possibly the only product in Getmore's Chocolate Corp lineup that has any trace of chocolate in it."
+	icon_state = "chocolagebag"
+
+/obj/item/weapon/storage/chewables/gum

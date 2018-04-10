@@ -788,11 +788,10 @@
 	vend_delay = 21
 	icon_state = "cigs"
 	icon_vend = "cigs-vend"
-	products = list(/obj/item/weapon/storage/chewables/tobacco = 2,
-					/obj/item/weapon/storage/chewables/tobacco2 = 2,
+	products = list(
 					/obj/item/weapon/storage/cigpaper/filters = 5,
-					/obj/item/weapon/storage/cigpaper = 5,
-					/obj/item/weapon/storage/cigpaper/fancy = 5,
+					/obj/item/weapon/storage/cigpaper = 3,
+					/obj/item/weapon/storage/cigpaper/fancy = 2,
 					/obj/item/weapon/storage/fancy/cigarettes = 5,
 					/obj/item/weapon/storage/fancy/cigarettes/luckystars = 2,
 					/obj/item/weapon/storage/fancy/cigarettes/jerichos = 2,
@@ -804,6 +803,9 @@
 					/obj/item/weapon/storage/fancy/cigarettes/cigarello/variety = 2,
 					/obj/item/weapon/storage/box/matches = 10,
 					/obj/item/weapon/flame/lighter/random = 4,
+					/obj/item/weapon/storage/chewables/tobacco = 2,
+					/obj/item/weapon/storage/chewables/tobacco2 = 2,
+					/obj/item/weapon/storage/chewables/tobacco3 = 2,
 					/obj/item/clothing/mask/smokable/ecig/simple = 10,
 					/obj/item/clothing/mask/smokable/ecig/util = 5,
 					/obj/item/clothing/mask/smokable/ecig/deluxe = 1,
@@ -820,8 +822,10 @@
 					/obj/item/clothing/mask/smokable/cigarette/rolled/sausage = 3)
 	premium = list(/obj/item/weapon/storage/fancy/cigar = 5,/obj/item/weapon/storage/fancy/cigarettes/killthroat = 5)
 
-	prices = list(/obj/item/weapon/storage/chewables/tobacco = 40,
+	prices = list(
+					/obj/item/weapon/storage/chewables/tobacco = 40,
 					/obj/item/weapon/storage/chewables/tobacco2 = 50,
+					/obj/item/weapon/storage/chewables/tobacco3 = 60,
 					/obj/item/weapon/storage/cigpaper/filters = 5,
 					/obj/item/weapon/storage/cigpaper = 10,
 					/obj/item/weapon/storage/cigpaper/fancy = 20,

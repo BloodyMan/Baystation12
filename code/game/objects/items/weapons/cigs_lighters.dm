@@ -760,9 +760,9 @@ obj/item/clothing/mask/chewable/Destroy()
 
 
 /obj/item/clothing/mask/chewable/tobacco/New()
-    ..()
-    for(var/R in filling)
-        reagents.add_reagent(R, filling[R])
+	..()
+	for(var/R in filling)
+		reagents.add_reagent(R, filling[R])
 
 /obj/item/weapon/cigbutt/spitwad
 	name = "spit wad"
@@ -797,6 +797,12 @@ obj/item/clothing/mask/chewable/Destroy()
 	desc = "A chewy wad of fine tobacco."
 	filling = list(/datum/reagent/tobacco/fine = 2)
 
+/obj/item/clothing/mask/chewable/tobacco/nico
+	name = "chewing tobacco"
+	desc = "A chewy wad of fine tobacco."
+	filling = list(/datum/reagent/nicotine = 1)
+	icon_state = "nic_gum"
+	type_butt = /obj/item/weapon/cigbutt/spitgum
 
 
 /obj/item/clothing/mask/chewable/candy
@@ -817,13 +823,31 @@ obj/item/clothing/mask/chewable/Destroy()
 	desc = "A disgusting chewed up wad of gum."
 	icon_state = "spit-gum"
 
+
+/obj/item/weapon/cigbutt/lollibutt
+	name = "popsicle stick"
+	desc = "A popsicle stick devoid of pop."
+	icon_state = "pop-stick"
+
+
 /obj/item/clothing/mask/chewable/candy/gum
 	name = "chewing gum"
-	desc = "A chewy wad of fine sugar."
-
+	desc = "A chewy wad of fine synthetic rubber and artificial flavoring."
 	icon_state = "gum"
+	brand = "gum"
 	filling = list(/datum/reagent/sugar = 2)
-	brand = "fine"
+	reagents.add_reagent(pick(list(
+				/datum/reagent/fuel,
+				/datum/reagent/drink/juice/grape,
+				/datum/reagent/drink/juice/orange,
+				/datum/reagent/drink/juice/lemon,
+				/datum/reagent/drink/juice/lime,
+				/datum/reagent/drink/juice/apple,
+				/datum/reagent/drink/juice/pear,
+				/datum/reagent/drink/juice/banana,
+				/datum/reagent/drink/juice/berry,
+				/datum/reagent/drink/juice/watermelon)), 2)
+		color = reagents.get_color()
 
 /obj/item/clothing/mask/chewable/candy/lolli
 	name = "lollipop"
@@ -831,7 +855,7 @@ obj/item/clothing/mask/chewable/Destroy()
 
 	icon_state = "gum"
 	filling = list(/datum/reagent/sugar = 2)
-	brand = "fine"
+	brand = "unremarkable"
 
 
 
