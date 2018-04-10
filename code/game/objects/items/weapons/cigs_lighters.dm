@@ -836,6 +836,9 @@ obj/item/clothing/mask/chewable/Destroy()
 	icon_state = "gum"
 	brand = "gum"
 	filling = list(/datum/reagent/sugar = 2)
+	
+/obj/item/clothing/mask/chewable/candy/gum/New()
+	..()
 	reagents.add_reagent(pick(list(
 				/datum/reagent/fuel,
 				/datum/reagent/drink/juice/grape,
@@ -847,7 +850,7 @@ obj/item/clothing/mask/chewable/Destroy()
 				/datum/reagent/drink/juice/banana,
 				/datum/reagent/drink/juice/berry,
 				/datum/reagent/drink/juice/watermelon)), 2)
-		color = reagents.get_color()
+	color = reagents.get_color()
 
 /obj/item/clothing/mask/chewable/candy/lolli
 	name = "lollipop"
