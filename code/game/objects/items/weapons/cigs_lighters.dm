@@ -704,10 +704,18 @@ obj/item/clothing/mask/chewable/New()
 	atom_flags |= ATOM_FLAG_NO_REACT // so it doesn't react until you light it
 	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 15
 
-//obj/item/clothing/mask/chewable/Destroy()
-//	. = ..()
+/obj/item/clothing/mask/chewable/equipped()
+	START_PROCESSING(SSobj, src)
+	..()
+
+/obj/item/clothing/mask/chewable/dropped()
+	STOP_PROCESSING(SSobj, src)
+	..()
+
+obj/item/clothing/mask/chewable/Destroy()
+	. = ..()
 //	if(lit)
-//		STOP_PROCESSING(SSobj, src)
+	STOP_PROCESSING(SSobj, src)
 
 /obj/item/clothing/mask/chewable/proc/chew(amount)
 	chewtime -= amount
@@ -715,10 +723,11 @@ obj/item/clothing/mask/chewable/New()
 		if(ishuman(loc))
 			var/mob/living/carbon/human/C = loc
 			if (src == C.wear_mask && C.check_has_mouth()) // if it's in the human/monkey mouth, transfer reagents to the mob
-				STOP_PROCESSING(SSobj, src)
 				reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2) // Most of it is not inhaled... balance reasons.
 		else // else just remove some of the reagents
 			reagents.remove_any(REM)
+
+
 
 /obj/item/clothing/mask/chewable/Process()
 //	var/turf/location = get_turf(src)
@@ -733,12 +742,13 @@ obj/item/clothing/mask/chewable/New()
 	STOP_PROCESSING(SSobj, src)
 	update_icon()
 
-/obj/item/clothing/mask/chewable
+/obj/item/clothing/mask/chewable/tobacco
 	name = "wad"
 	desc = "A chewy wad of nothing."
 	throw_speed = 0.5
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "wad"
+	type_butt = /obj/item/weapon/cigbutt/spitwad
 
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS | SLOT_MASK
@@ -746,7 +756,7 @@ obj/item/clothing/mask/chewable/New()
 	chem_volume = 50
 	chewtime = 300
 	brand = "generic"
-	var/list/filling = list(/datum/reagent/tobacco = 6)
+	var/list/filling = list()
 
 
 /obj/item/weapon/cigbutt/spitwad
@@ -770,7 +780,7 @@ obj/item/clothing/mask/chewable/New()
 			M.remove_from_mob(src) //un-equip it so the overlays can update
 		qdel(src)
 
-/obj/item/clothing/mask/chewable/lenni
+/obj/item/clothing/mask/chewable/tobacco/lenni
 	name = "chewing tobacco"
 	desc = "A chewy wad of tobacco."
 	icon = 'icons/obj/clothing/masks.dmi'
@@ -778,9 +788,9 @@ obj/item/clothing/mask/chewable/New()
 	filling = list(/datum/reagent/tobacco = 2)
 	brand = "generic"
 
-/obj/item/clothing/mask/chewable/redlady
+/obj/item/clothing/mask/chewable/tobacco/redlady
 	name = "chewing tobacco"
-	desc = "A chewy wad of tobacco."
+	desc = "A chewy wad of fine tobacco."
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "chew"
 	filling = list(/datum/reagent/tobacco/fine = 2)

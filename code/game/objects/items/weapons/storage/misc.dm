@@ -102,7 +102,7 @@
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "chew_levi"
 
-	startswith = list(/obj/item/clothing/mask/chewable/lenni = 8)
+	startswith = list(/obj/item/clothing/mask/chewable/tobacco/lenni = 8)
 
 /obj/item/weapon/storage/chewables/tobacco2
 	name = "\improper RougeLady chewing tobacco"
@@ -110,4 +110,4 @@
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "chew_redman"
 
-	startswith = list(/obj/item/clothing/mask/chewable/redlady = 8)
+	startswith = list(/obj/item/clothing/mask/chewable/tobacco/redlady = 8)
