@@ -808,6 +808,11 @@ obj/item/clothing/mask/chewable/Destroy()
 	brand = "wad"
 	var/list/filling = list()
 
+/obj/item/weapon/cigbutt/spitgum
+	name = "old gum"
+	desc = "A disgusting chewed up wad of gum."
+	icon_state = "spit-gum"
+
 /obj/item/clothing/mask/chewable/candy/gum
 	name = "chewing gum"
 	desc = "A chewy wad of fine sugar."
