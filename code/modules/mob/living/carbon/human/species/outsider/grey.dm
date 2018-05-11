@@ -11,7 +11,7 @@
 	min_age = 1
 	max_age = 1200
 
-	spawn_flags = SPECIES_CAN_JOIN
+	spawn_flags = SPECIES_IS_RESTRICTED
 	appearance_flags = HAS_EYE_COLOR
 
 	blood_color = "#00ffc8"
