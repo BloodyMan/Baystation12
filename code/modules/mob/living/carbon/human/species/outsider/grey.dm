@@ -3,7 +3,7 @@
 	name_plural = SPECIES_GREY
 
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
-	blurb = "Greys do not exist. Greys are a myth. Greys are among us. Greys are uplifted chimpanzees. Greys are evolved humans from the future. Greys do not exist. Greys are early Bogani sightings. Greys are figments of imagination. Greys are not from this dimension. Greys do not exist. Greys are a poorly documented species allegedly originating from the direction of the reticulum stars. Their language to date defies translation and their motives are alien to human comprehension. Captured specimens quickly expire despite our best efforts and spectral analysis reveal all specimens are identical on a genetic level. Their goals seem to revolve around harvesting organs of other races and the acquisition of super-matter. To what ends we can not discern."
+	blurb = "The mighty Ba'dmin."
 	num_alternate_languages = 0
 	default_language = SPECIES_GREY
 	unarmed_types = list(/datum/unarmed_attack/punch)
