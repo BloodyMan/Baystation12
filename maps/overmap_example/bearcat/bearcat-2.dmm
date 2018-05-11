@@ -5747,8 +5747,6 @@
 /obj/item/device/multitool{
 	pixel_x = 5
 	},
-/obj/item/weapon/cartridge/atmos,
-/obj/item/weapon/cartridge/atmos,
 /obj/item/device/pipe_painter,
 /obj/item/clamp,
 /turf/simulated/floor/tiled,
@@ -5761,7 +5759,7 @@
 	icon_state = "bulb1";
 	dir = 1
 	},
-/obj/structure/closet/firecloset/full,
+/obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/maintenance/atmos)
 "Cc" = (

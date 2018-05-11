@@ -3069,12 +3069,12 @@
 /area/rescue_base/base)
 "ahk" = (
 /obj/structure/table/reinforced,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -6958,9 +6958,8 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "apF" = (
-/obj/structure/sign/poster{
+/obj/structure/sign/poster/bay_9{
 	pixel_x = -32;
-	poster_type = "/datum/poster/bay_9"
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
@@ -10230,7 +10229,7 @@
 	},
 /area/syndicate_mothership)
 "axE" = (
-/obj/item/device/pda/syndicate,
+/obj/item/modular_computer/pda/syndicate,
 /obj/structure/table/standard,
 /turf/unsimulated/floor{
 	icon_state = "lino"
@@ -10943,7 +10942,7 @@
 /area/centcom/specops)
 "ayR" = (
 /obj/structure/table/reinforced,
-/obj/item/device/pda/ert,
+/obj/item/modular_computer/pda/ert,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -12077,13 +12076,13 @@
 /area/centcom/specops)
 "aBe" = (
 /obj/structure/table/reinforced,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -12104,7 +12103,7 @@
 /area/centcom/specops)
 "aBh" = (
 /obj/structure/table/reinforced,
-/obj/item/device/pda/captain,
+/obj/item/modular_computer/pda/captain,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -12586,8 +12585,7 @@
 /turf/unsimulated/wall,
 /area/centcom/control)
 "aCc" = (
-/obj/structure/sign/poster{
-	poster_type = "/datum/poster/bay_50";
+/obj/structure/sign/poster/bay_50{
 	pixel_x = -32
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -12940,6 +12938,10 @@
 	pixel_x = -8;
 	pixel_y = 25;
 	req_access = list(150)
+	},
+/obj/machinery/button/remote/blast_door{
+	id = "smindicate";
+	pixel_y = 20;
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
@@ -17154,7 +17156,7 @@
 	},
 /area/tdome)
 "aMf" = (
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/merchant_station)
 "aMg" = (
 /turf/simulated/floor/asteroid,
@@ -17501,7 +17503,7 @@
 /area/merchant_station)
 "aNc" = (
 /obj/structure/disposalpipe/segment,
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/merchant_station)
 "aNd" = (
 /obj/random/trash,
@@ -17718,7 +17720,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/merchant_station)
 "aNC" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/merchant_station)
 "aND" = (
 /obj/random/coin,
@@ -19345,7 +19347,7 @@
 /area/merchant_station)
 "aRn" = (
 /obj/structure/sign/warning/docking_area,
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/merchant_station)
 "aRo" = (
 /obj/structure/disposalpipe/segment{

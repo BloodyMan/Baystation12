@@ -15,8 +15,6 @@
 	var/damage_state = "00"            // Modifier used for generating the on-mob damage overlay for this limb.
 
 	// Damage vars.
-	var/brute_mod = 1                  // Multiplier for incoming brute damage.
-	var/burn_mod = 1                   // As above for burn.
 	var/brute_dam = 0                  // Actual current brute damage.
 	var/brute_ratio = 0                // Ratio of current brute damage to max damage.
 	var/burn_dam = 0                   // Actual current burn damage.
@@ -141,7 +139,7 @@
 			burn_damage = 7
 		if (3)
 			burn_damage = 3
-	burn_damage *= robotic/burn_mod //ignore burn mod for EMP damage
+	burn_damage *= robotic/species.burn_mod //ignore burn mod for EMP damage
 
 	var/power = 4 - severity //stupid reverse severity
 	for(var/obj/item/I in implants)
@@ -474,7 +472,7 @@ This function completely restores a damaged organ to perfect condition.
 	var/wound_type = get_wound_type(type, damage)
 
 	if(wound_type)
-		var/datum/wound/W = new wound_type(damage)
+		var/datum/wound/W = new wound_type(damage, src)
 
 		//Check whether we can add the wound to an existing wound
 		if(surgical)
@@ -785,6 +783,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(parent_organ)
 		var/datum/wound/lost_limb/W = new (src, disintegrate, clean)
 		if(clean)
+			W.parent_organ = parent_organ
 			parent_organ.wounds |= W
 			parent_organ.update_damages()
 		else
@@ -795,6 +794,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			stump.add_pain(max_damage)
 			if(robotic >= ORGAN_ROBOT)
 				stump.robotize()
+			W.parent_organ = stump
 			stump.wounds |= W
 			victim.organs |= stump
 			if(disintegrate != DROPLIMB_BURN)

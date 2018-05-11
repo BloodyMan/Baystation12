@@ -327,6 +327,7 @@
 	center_of_mass = "x=17;y=18"
 	nutriment_amt = 5
 	nutriment_desc = list("sweetness" = 3, "cookie" = 2)
+	w_class = ITEM_SIZE_TINY
 	New()
 		..()
 		bitesize = 1
@@ -588,11 +589,15 @@
 	desc = "We all love tofu."
 	filling_color = "#fffee0"
 	center_of_mass = "x=17;y=10"
-	nutriment_amt = 3
+//	nutriment_amt = 3
 	nutriment_desc = list("tofu" = 3, "goeyness" = 3)
 	New()
 		..()
 		src.bitesize = 3
+
+/obj/item/weapon/reagent_containers/food/snacks/tofu/New()
+	..()
+	reagents.add_reagent(/datum/reagent/nutriment/softtofu, 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/tofurkey
 	name = "\improper Tofurkey"
@@ -620,16 +625,23 @@
 		bitesize = 1
 
 /obj/item/weapon/reagent_containers/food/snacks/carpmeat
+	desc = "A fillet of space carp meat."
+/obj/item/weapon/reagent_containers/food/snacks/carpmeat/New()
+		..()
+		reagents.add_reagent(/datum/reagent/nutriment/protein, 3)
+		reagents.add_reagent(/datum/reagent/toxin/carpotoxin, 6)
+		src.bitesize = 6
+
+/obj/item/weapon/reagent_containers/food/snacks/carpmeat/safe
 	name = "carp fillet"
-	desc = "A fillet of spess carp meat."
+	desc = "A fillet of carp meat. Synthesized from ancient Earth genetic archives."
 	icon_state = "fishfillet"
 	filling_color = "#ffdefe"
 	center_of_mass = "x=17;y=13"
 
-	New()
+/obj/item/weapon/reagent_containers/food/snacks/carpmeat/safe/New()
 		..()
 		reagents.add_reagent(/datum/reagent/nutriment/protein, 3)
-		reagents.add_reagent(/datum/reagent/toxin/carpotoxin, 6)
 		src.bitesize = 6
 
 /obj/item/weapon/reagent_containers/food/snacks/fishfingers
@@ -722,7 +734,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/fatsausage
 	name = "fat sausage"
-	desc = "A piece of mixed, long meat with some bite to it."
+	desc = "A piece of mixed, long meat, with some bite to it."
 	icon_state = "sausage"
 	filling_color = "#db0000"
 	center_of_mass = "x=16;y=16"
@@ -730,6 +742,11 @@
 /obj/item/weapon/reagent_containers/food/snacks/fatsausage/New()
 	..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 8)
+	bitesize = 2
+
+/obj/item/weapon/reagent_containers/food/snacks/sausage/smoked/New()
+	..()
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 6)
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/donkpocket/sinpocket
@@ -2050,6 +2067,20 @@
 	New()
 		..()
 		reagents.add_reagent(/datum/reagent/drink/juice/tomato, 10)
+		bitesize = 4
+
+/obj/item/weapon/reagent_containers/food/snacks/nanopasta
+	name = "nanopasta"
+	desc = "Nanomachines, son!"
+	icon_state = "nanopasta"
+	trash = /obj/item/trash/plate
+	filling_color = "#535e66"
+	center_of_mass = "x=16;y=10"
+	nutriment_amt = 6
+
+/obj/item/weapon/reagent_containers/food/snacks/nanopasta/New()
+		..()
+		reagents.add_reagent(/datum/reagent/nanites, 10)
 		bitesize = 4
 
 /obj/item/weapon/reagent_containers/food/snacks/meatballspagetti
