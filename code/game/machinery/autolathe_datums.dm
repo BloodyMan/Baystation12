@@ -191,6 +191,12 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	category = "General"
 	is_stack = 1
 
+/datum/autolathe/recipe/fglass
+	name = "glass fiber bolts"
+	path = /obj/item/stack/material/glass/fibre
+	category = "General"
+	is_stack = 1
+
 /datum/autolathe/recipe/rods
 	name = "metal rods"
 	path = /obj/item/stack/rods

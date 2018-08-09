@@ -601,6 +601,21 @@ var/list/name_to_material
 	rod_product = null
 	integrity = 100
 
+/material/glass/fibre
+	name = "fglass"
+	brute_armor = 4
+	burn_armor = 10
+	melting_point = T0C + 4000
+	display_name = "fiber glass"
+	stack_type = /obj/item/stack/material/glass/fglass
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	composite_material = list() //todo
+
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	composite_material = list() //todo
+	rod_product = null
+	integrity = 100
+
 
 /material/plastic
 	name = "plastic"
