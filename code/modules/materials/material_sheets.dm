@@ -276,6 +276,12 @@
 	icon_state = "sheet-leather"
 	default_type = "leather"
 
+/obj/item/stack/material/gfibre
+	name = "fiber glass"
+	desc = "Glass, hammered really thin and woven into a fabric."
+	icon_state = "sheet-fglass"
+	default_type = "fglass"
+
 /obj/item/stack/material/glass
 	name = "glass"
 	icon_state = "sheet-glass"
@@ -314,7 +320,7 @@
 
 /obj/item/stack/material/glass/phoronrglass/ten
 	amount = 10
-	
+
 /obj/item/stack/material/aliumium
 	name = "aliumium chunks"
 	icon_state = "sheet-torn"
