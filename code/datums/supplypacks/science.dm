@@ -1,6 +1,33 @@
 /decl/hierarchy/supply_pack/science
 	name = "Science"
 
+/decl/hierarchy/supply_pack/science/chemistry_dispenser
+	name = "Reagent dispenser"
+	contains = list(
+			/obj/machinery/chemical_dispenser{anchored = 0}
+		)
+	cost = 25
+	containertype = /obj/structure/largecrate
+	containername = "reagent dispenser crate"
+
+/decl/hierarchy/supply_pack/science/dispenser_cartridges
+	name = "Empty dispenser cartridges"
+	contains = list(
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge
+		)
+	cost = 15
+	containertype = /obj/structure/closet/crate
+	containername = "dispenser cartridge crate"
+
 /decl/hierarchy/supply_pack/science/virus
 	name = "Virus sample crate"
 	contains = list(/obj/item/weapon/virusdish/random = 4)

@@ -1,5 +1,5 @@
 /decl/hierarchy/supply_pack/materials
-	name = "Materials"
+	name = "Materials A"
 
 /decl/hierarchy/supply_pack/materials/New()
 	for(var/thing in contains)
@@ -10,6 +10,7 @@
 	..()
 
 // Material sheets (50 - full stack)
+
 /decl/hierarchy/supply_pack/materials/steel50
 	name = "50 steel sheets"
 	contains = list(/obj/item/stack/material/steel/fifty)

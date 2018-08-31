@@ -1,12 +1,6 @@
 /decl/hierarchy/supply_pack/engineering
 	name = "Engineering"
 
-/decl/hierarchy/supply_pack/engineering/lightbulbs
-	name = "Replacement lights"
-	contains = list(/obj/item/weapon/storage/box/lights/mixed = 3)
-	cost = 10
-	containername = "\improper Replacement lights"
-
 /decl/hierarchy/supply_pack/engineering/smes_circuit
 	name = "Superconducting Magnetic Energy Storage Unit Circuitry"
 	contains = list(/obj/item/weapon/circuitboard/smes)
@@ -244,12 +238,4 @@
 	containertype = /obj/structure/closet/firecloset
 	containername = "\improper fire-safety closet"
 
-/decl/hierarchy/supply_pack/engineering/voidsuit
-	name = "Engineering voidsuit"
-	contains = list(/obj/item/clothing/suit/space/void/engineering/alt,
-					/obj/item/clothing/head/helmet/space/void/engineering/alt,
-					/obj/item/clothing/shoes/magboots)
-	cost = 120
-	containername = "\improper Engineering voidsuit crate"
-	containertype = /obj/structure/closet/crate/secure/large
-	access = access_engine
+
