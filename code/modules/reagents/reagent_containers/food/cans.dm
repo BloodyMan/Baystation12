@@ -237,7 +237,7 @@
 	reagents.add_reagent(/datum/reagent/nutriment, 40)
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/tomato
-	name = "\improper Corned Beef"
+	name = "\improper Tomato Soup"
 	desc = "Tomato soup, a survivors guilt..y pleasure. No expiration date."
 	icon_state = "tomato"
 	center_of_mass = "x=16;y=10"
