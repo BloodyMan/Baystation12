@@ -1,5 +1,5 @@
 /decl/hierarchy/supply_pack/science/voidsuit
-	name = "Excavation voidsuit"
+	name = "EVA - Excavation voidsuit"
 	contains = list(/obj/item/clothing/suit/space/void/excavation,
 					/obj/item/clothing/head/helmet/space/void/excavation,
 					/obj/item/clothing/shoes/magboots)
@@ -9,7 +9,7 @@
 	access = access_nanotrasen
 
 /decl/hierarchy/supply_pack/science/voidsuit_mining
-	name = "Mining voidsuit"
+	name = "EVA - Mining voidsuit"
 	contains = list(/obj/item/clothing/suit/space/void/mining/alt,
 					/obj/item/clothing/head/helmet/space/void/mining/alt,
 					/obj/item/clothing/shoes/magboots)
@@ -19,7 +19,7 @@
 	access = access_nanotrasen
 
 /decl/hierarchy/supply_pack/science/voidsuit_pilot
-	name = "Pilot voidsuit"
+	name = "EVA - Pilot voidsuit"
 	contains = list(/obj/item/clothing/suit/space/void/pilot,
 					/obj/item/clothing/head/helmet/space/void/pilot,
 					/obj/item/clothing/shoes/magboots)
@@ -29,7 +29,7 @@
 	access = access_nanotrasen
 
 /decl/hierarchy/supply_pack/science/voidsuit_exploration
-	name = "Exploration voidsuit"
+	name = "EVA - Exploration voidsuit"
 	contains = list(/obj/item/clothing/suit/space/void/exploration,
 					/obj/item/clothing/head/helmet/space/void/exploration,
 					/obj/item/clothing/shoes/magboots)

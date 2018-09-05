@@ -2,21 +2,21 @@
 	name = "Operations"
 
 /decl/hierarchy/supply_pack/operations/mule
-	name = "MULEbot Crate"
+	name = "Equipment - MULEbot Crate"
 	contains = list()
 	cost = 20
 	containertype = /obj/structure/largecrate/animal/mulebot
 	containername = "Mulebot Crate"
 
 /decl/hierarchy/supply_pack/operations/cargotrain
-	name = "Cargo Train Tug"
+	name = "Equipment - Cargo Train Tug"
 	contains = list(/obj/vehicle/train/cargo/engine)
 	cost = 45
 	containertype = /obj/structure/largecrate
 	containername = "\improper Cargo Train Tug Crate"
 
 /decl/hierarchy/supply_pack/operations/cargotrailer
-	name = "Cargo Train Trolley"
+	name = "Equipment - Cargo Train Trolley"
 	contains = list(/obj/vehicle/train/cargo/trolley)
 	cost = 15
 	containertype = /obj/structure/largecrate
@@ -29,21 +29,21 @@
 					/obj/item/weapon/storage/pill_bottle/happy,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/pwine)
 
-	name = "Contraband crate"
+	name = "UNLISTED - Contraband crate"
 	cost = 30
 	containername = "\improper Unlabeled crate"
 	contraband = 1
 	supply_method = /decl/supply_method/randomized
 
 /decl/hierarchy/supply_pack/operations/hoverpod
-	name = "Hoverpod Shipment"
+	name = "Equipment - Hoverpod Shipment"
 	contains = list()
 	cost = 80
 	containertype = /obj/structure/largecrate/hoverpod
 	containername = "\improper Hoverpod Crate"
 
 /decl/hierarchy/supply_pack/operations/webbing
-	name = "Webbing crate"
+	name = "Gear - Webbing crate"
 	num_contained = 4
 	contains = list(/obj/item/clothing/accessory/storage/holster,
 					/obj/item/clothing/accessory/storage/black_vest,
@@ -56,7 +56,7 @@
 	cost = 15
 	containername = "\improper Webbing crate"
 
-/decl/hierarchy/supply_pack/operations/voidsuit1
+/decl/hierarchy/supply_pack/operations/voidsuit_engineering
 	name = "Voidsuit - Engineering"
 	contains = list(/obj/item/clothing/suit/space/void/engineering/alt,
 					/obj/item/clothing/head/helmet/space/void/engineering/alt,
@@ -66,7 +66,7 @@
 	containertype = /obj/structure/closet/crate/secure/large
 	access = access_engine
 
-/decl/hierarchy/supply_pack/operations/voidsuit2
+/decl/hierarchy/supply_pack/operations/voidsuit_medical
 	name = "Voidsuit - Medical"
 	contains = list(/obj/item/clothing/suit/space/void/medical/alt,
 					/obj/item/clothing/head/helmet/space/void/medical/alt,
@@ -76,7 +76,7 @@
 	containertype = /obj/structure/closet/crate/secure/large
 	access = access_medical_equip
 
-/decl/hierarchy/supply_pack/operations/voidsuit3
+/decl/hierarchy/supply_pack/operations/voidsuit_security
 	name = "Voidsuit - Security (armored)"
 	contains = list(/obj/item/clothing/suit/space/void/security/alt,
 					/obj/item/clothing/head/helmet/space/void/security/alt,
@@ -86,26 +86,47 @@
 	containertype = /obj/structure/closet/crate/secure/large
 	access = access_brig
 
-/decl/hierarchy/supply_pack/operations/toner
-	name = "Toner cartridges"
-	contains = list(/obj/item/device/toner = 3)
-	cost = 10
-	containername = "\improper Toner cartridges"
+/decl/hierarchy/supply_pack/operations/voidsuit
+	name = "Excavation voidsuit"
+	contains = list(/obj/item/clothing/suit/space/void/excavation,
+					/obj/item/clothing/head/helmet/space/void/excavation,
+					/obj/item/clothing/shoes/magboots)
+	cost = 120
+	containername = "\improper Excavation voidsuit crate"
+	containertype = /obj/structure/closet/crate/secure/large
+	access = access_nanotrasen
 
-/decl/hierarchy/supply_pack/operations/wpaper
-	name = "Wrapping paper"
-	contains = list(/obj/item/stack/package_wrap/twenty_five = 3)
-	cost = 10
-	containername = "\improper Wrapping paper"
+/decl/hierarchy/supply_pack/operations/voidsuit_mining
+	name = "Mining voidsuit"
+	contains = list(/obj/item/clothing/suit/space/void/mining/alt,
+					/obj/item/clothing/head/helmet/space/void/mining/alt,
+					/obj/item/clothing/shoes/magboots)
+	cost = 120
+	containername = "\improper Mining voidsuit crate"
+	containertype = /obj/structure/closet/crate/secure/large
+	access = access_nanotrasen
 
-/decl/hierarchy/supply_pack/operations/officetoys
-	name = "Office toys"
-	contains = list(/obj/item/toy/desk/newtoncradle,
-					/obj/item/toy/desk/fan,
-					/obj/item/toy/desk/officetoy,
-					/obj/item/toy/desk/dippingbird)
-	cost = 15
-	containername = "\improper Office toys crate"
+/decl/hierarchy/supply_pack/operations/voidsuit_pilot
+	name = "Pilot voidsuit"
+	contains = list(/obj/item/clothing/suit/space/void/pilot,
+					/obj/item/clothing/head/helmet/space/void/pilot,
+					/obj/item/clothing/shoes/magboots)
+	cost = 120
+	containername = "\improper Pilot voidsuit crate"
+	containertype = /obj/structure/closet/crate/secure/large
+	access = access_nanotrasen
+
+/decl/hierarchy/supply_pack/operations/voidsuit_exploration
+	name = "Exploration voidsuit"
+	contains = list(/obj/item/clothing/suit/space/void/exploration,
+					/obj/item/clothing/head/helmet/space/void/exploration,
+					/obj/item/clothing/shoes/magboots)
+	cost = 120
+	containername = "\improper Exploration voidsuit crate"
+	containertype = /obj/structure/closet/crate/secure/large
+	access = access_explorer
+
+
 
 /decl/hierarchy/supply_pack/operations/bureaucracy
 	contains = list(/obj/item/weapon/clipboard,
@@ -126,20 +147,3 @@
 	containertype = /obj/structure/closet/crate/large
 	containername = "\improper Office supplies crate"
 
-/decl/hierarchy/supply_pack/operations/scanner_module
-	name = "Paper scanner module crate"
-	contains = list(/obj/item/weapon/computer_hardware/scanner/paper = 4)
-	cost = 20
-	containername = "\improper Paper scanner module crate"
-
-/decl/hierarchy/supply_pack/operations/spare_pda
-	name = "Spare PDAs"
-	contains = list(/obj/item/modular_computer/pda = 3)
-	cost = 10
-	containername = "\improper Spare PDA crate"
-
-/decl/hierarchy/supply_pack/operations/eftpos
-	contains = list(/obj/item/device/eftpos)
-	name = "EFTPOS scanner"
-	cost = 10
-	containername = "\improper EFTPOS crate"

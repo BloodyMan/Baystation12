@@ -2,7 +2,7 @@
 	name = "Galley"
 
 /decl/hierarchy/supply_pack/galley/food
-	name = "Kitchen supply crate"
+	name = "General - Kitchen supply crate"
 	contains = list(/obj/item/weapon/reagent_containers/food/condiment/flour = 6,
 					/obj/item/weapon/reagent_containers/food/drinks/milk = 4,
 					/obj/item/weapon/reagent_containers/food/drinks/soymilk = 2,
@@ -15,28 +15,28 @@
 	containername = "\improper Food crate"
 
 /decl/hierarchy/supply_pack/galley/beef
-	name = "Beef crate"
+	name = "Perishables - Beef crate"
 	contains = list(/obj/item/weapon/reagent_containers/food/snacks/meat/beef = 6)
 	containertype = /obj/structure/closet/crate/freezer
 	containername = "\improper Beef crate"
 	cost = 20
 
 /decl/hierarchy/supply_pack/galley/goat
-	name = "Goat meat crate"
+	name = "Perishables - Goat meat crate"
 	contains = list(/obj/item/weapon/reagent_containers/food/snacks/meat/goat = 6)
 	containertype = /obj/structure/closet/crate/freezer
 	containername = "\improper Goat meat crate"
 	cost = 20
 
 /decl/hierarchy/supply_pack/galley/chicken
-	name = "Chicken meat crate"
+	name = "Perishables - Chicken meat crate"
 	contains = list(/obj/item/weapon/reagent_containers/food/snacks/meat/chicken = 6)
 	containertype = /obj/structure/closet/crate/freezer
 	containername = "\improper Chicken meat crate"
 	cost = 20
 
 /decl/hierarchy/supply_pack/galley/seafood
-	name = "Seafood crate"
+	name = "Perishables - Seafood crate"
 	contains = list(
 		/obj/item/weapon/reagent_containers/food/snacks/fish = 2,
 		/obj/item/weapon/reagent_containers/food/snacks/fish/shark = 2,
@@ -47,14 +47,14 @@
 	cost = 20
 
 /decl/hierarchy/supply_pack/galley/eggs
-	name = "Eggs crate"
+	name = "Perishables - Eggs crate"
 	contains = list(/obj/item/weapon/storage/fancy/egg_box = 2)
 	containertype = /obj/structure/closet/crate/freezer
 	containername = "\improper Egg crate"
 	cost = 15
 
 /decl/hierarchy/supply_pack/galley/milk
-	name = "Milk crate"
+	name = "Perishables - Milk crate"
 	contains = list(/obj/item/weapon/reagent_containers/food/drinks/milk = 3)
 	containertype = /obj/structure/closet/crate/freezer
 	containername = "\improper Milk crate"
@@ -62,7 +62,7 @@
 
 /decl/hierarchy/supply_pack/galley/pizza
 	num_contained = 5
-	name = "Surprise pack of five pizzas"
+	name = "Emergency - Surprise pack of five pizzas"
 	contains = list(/obj/item/pizzabox/margherita,
 					/obj/item/pizzabox/mushroom,
 					/obj/item/pizzabox/meat,
@@ -73,7 +73,7 @@
 	supply_method = /decl/supply_method/randomized
 
 /decl/hierarchy/supply_pack/galley/party
-	name = "Party equipment"
+	name = "Bar - Party equipment"
 	contains = list(
 			/obj/item/weapon/storage/box/mixedglasses = 2,
 			/obj/item/weapon/storage/box/glasses/square,
@@ -94,7 +94,7 @@
 
 // TODO; Add more premium drinks at a later date. Could be useful for diplomatic events or fancy parties.
 /decl/hierarchy/supply_pack/galley/premiumalcohol
-	name = "Premium drinks crate"
+	name = "Bar - Premium drinks crate"
 	contains = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumwine = 1,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka = 1)
 	cost = 60
@@ -102,7 +102,7 @@
 	containername = "\improper Premium drinks"
 
 /decl/hierarchy/supply_pack/galley/barsupplies
-	name = "Bar supplies"
+	name = "Bar - Bar supplies"
 	contains = list(
 			/obj/item/weapon/storage/box/glasses/cocktail,
 			/obj/item/weapon/storage/box/glasses/rocks,
@@ -120,7 +120,7 @@
 	containername = "crate of bar supplies"
 
 /decl/hierarchy/supply_pack/galley/beer_dispenser
-	name = "Booze dispenser"
+	name = "Equipment - Booze dispenser"
 	contains = list(
 			/obj/machinery/chemical_dispenser/bar_alc{anchored = 0}
 		)
@@ -129,7 +129,7 @@
 	containername = "booze dispenser crate"
 
 /decl/hierarchy/supply_pack/galley/soda_dispenser
-	name = "Soda dispenser"
+	name = "Equipment - Soda dispenser"
 	contains = list(
 			/obj/machinery/chemical_dispenser/bar_soft{anchored = 0}
 		)
@@ -138,7 +138,7 @@
 	containername = "soda dispenser crate"
 
 /decl/hierarchy/supply_pack/galley/alcohol_reagents
-	name = "Bar alcoholic dispenser refill"
+	name = "Refills - Bar alcoholic dispenser refill"
 	contains = list(
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/beer,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/kahlua,
@@ -159,7 +159,7 @@
 	access = list(access_bar)
 
 /decl/hierarchy/supply_pack/galley/softdrink_reagents
-	name = "Bar soft drink dispenser refill"
+	name = "Refills - soft drink dispenser refill"
 	contains = list(
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/water,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ice,
@@ -184,7 +184,7 @@
 	containername = "soft drinks crate"
 
 /decl/hierarchy/supply_pack/galley/coffee_reagents
-	name = "Coffee machine dispenser refill"
+	name = "Refills - Coffee machine dispenser refill"
 	contains = list(
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/coffee,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cafe_latte,
