@@ -212,3 +212,16 @@
 /obj/item/weapon/reagent_containers/food/drinks/cans/ale/New()
 	..()
 	reagents.add_reagent(/datum/reagent/ethanol/ale, 30)
+
+
+// Canned food, what a concept!
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/meat
+	name = "\improper Corned Beef"
+	desc = "Allegedly animal proteins of named source, no expiration date."
+	icon_state = "syndi_cola_x"
+	center_of_mass = "x=16;y=10"
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/syndicolax/New()
+	..()
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 40)
