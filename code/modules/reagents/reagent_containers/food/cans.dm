@@ -218,10 +218,30 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/meat
 	name = "\improper Corned Beef"
-	desc = "Allegedly animal proteins of named source, no expiration date."
-	icon_state = "syndi_cola_x"
+	desc = "Allegedly animal proteins of named source. No expiration date."
+	icon_state = "beef"
 	center_of_mass = "x=16;y=10"
 
-/obj/item/weapon/reagent_containers/food/drinks/cans/syndicolax/New()
+/obj/item/weapon/reagent_containers/food/drinks/cans/meat/New()
 	..()
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 40)
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/beans
+	name = "\improper Baked Beans"
+	desc = "Beans, beans, the magical fruit, the more you eat.. No expiration date."
+	icon_state = "beans"
+	center_of_mass = "x=16;y=10"
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/beans/New()
+	..()
+	reagents.add_reagent(/datum/reagent/nutriment, 40)
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/tomato
+	name = "\improper Corned Beef"
+	desc = "Tomato soup, a survivors guilt..y pleasure. No expiration date."
+	icon_state = "tomato"
+	center_of_mass = "x=16;y=10"
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/tomato/New()
+	..()
+	reagents.add_reagent(/datum/reagent/nutriment, 40)
