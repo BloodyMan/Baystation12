@@ -71,6 +71,16 @@
 		if(WRINKLES_NONE)
 			to_chat(user, "<span class='notice'>It's completely wrinkle-free!</span>")
 
+/obj/item/clothing/examine(var/mob/user)
+	. = ..(user)
+	for(var/obj/item/clothing/accessory/A in accessories)
+		to_chat(user, "\icon[A] \A [A] is attached to it.")
+	switch(detergent_state)
+		if(DETERGENT_CLEAN)
+			to_chat(user, "<span class='bad'>It smells clean.</span>")
+		if(DETERGENT_STINKY)
+			to_chat(user, "<span class='notice'>It's quite stinky!</span>")
+
 /obj/item/clothing/proc/update_accessory_slowdown()
 	slowdown_accessory = 0
 	for(var/obj/item/clothing/accessory/A in accessories)

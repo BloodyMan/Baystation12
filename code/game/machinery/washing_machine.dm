@@ -21,10 +21,11 @@
 	//1 = hacked
 	var/gibs_ready = 0
 	var/obj/crayon
+	var/obj/detergent
 
 /obj/machinery/washing_machine/Destroy()
-	qdel(crayon)
-	crayon = null
+	QDEL_NULL(crayon)
+	QDEL_NULL(detergent)
 	. = ..()
 
 /obj/machinery/washing_machine/verb/start()
@@ -56,6 +57,8 @@
 			if(istype(A, /obj/item/clothing))
 				var/obj/item/clothing/C = A
 				C.ironed_state = WRINKLES_WRINKLY
+				if(detergent)
+					C.detergent_state = DETERGENT_CLEAN
 
 	//Tanning!
 	for(var/obj/item/stack/material/hairlesshide/HH in contents)
@@ -84,16 +87,21 @@
 	icon_state = "wm_[state][panel]"
 
 /obj/machinery/washing_machine/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/weapon/pen/crayon) || istype(W,/obj/item/weapon/stamp))
+	if(istype(W,/obj/item/weapon/pen/crayon) || istype(W,/obj/item/weapon/reagent_containers/pill/detergent))
 		if( state in list(	1, 3, 6 ) )
 			if(!crayon)
 				if(!user.unEquip(W, src))
 					return
 				crayon = W
+				detergent = W
 			else
 				..()
 		else
 			..()
+	else if((obj_flags & OBJ_FLAG_ANCHORABLE) && isWrench(W))
+		wrench_floor_bolts(user)
+		power_change()
+		return
 	else if(istype(W,/obj/item/grab))
 		if( (state == 1) && hacked)
 			var/obj/item/grab/G = W
