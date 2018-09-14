@@ -22,7 +22,7 @@
 	var/gibs_ready = 0
 	var/obj/crayon
 	var/obj/detergent
-	obj_flags |= OBJ_FLAG_ANCHORABLE
+	obj_flags = OBJ_FLAG_ANCHORABLE
 
 /obj/machinery/washing_machine/Destroy()
 	QDEL_NULL(crayon)
