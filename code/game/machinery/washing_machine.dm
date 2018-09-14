@@ -22,6 +22,7 @@
 	var/gibs_ready = 0
 	var/obj/crayon
 	var/obj/detergent
+	obj_flags |= OBJ_FLAG_ANCHORABLE
 
 /obj/machinery/washing_machine/Destroy()
 	QDEL_NULL(crayon)
@@ -87,12 +88,21 @@
 	icon_state = "wm_[state][panel]"
 
 /obj/machinery/washing_machine/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/weapon/pen/crayon) || istype(W,/obj/item/weapon/reagent_containers/pill/detergent))
+	if(istype(W,/obj/item/weapon/pen/crayon))
 		if( state in list(	1, 3, 6 ) )
 			if(!crayon)
 				if(!user.unEquip(W, src))
 					return
 				crayon = W
+			else
+				..()
+		else
+			..()
+	else if(istype(W,/obj/item/weapon/reagent_containers/pill/detergent))
+		if( state in list(	1, 3, 6 ) )
+			if(!detergent)
+				if(!user.unEquip(W, src))
+					return
 				detergent = W
 			else
 				..()
