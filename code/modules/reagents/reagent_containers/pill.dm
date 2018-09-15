@@ -336,6 +336,7 @@ obj/item/weapon/reagent_containers/pill/noexcutite/New()
 	name = "detergent pod"
 	desc = "Put in water to get space cleaner. Do not eat. Really."
 	icon_state = "pod21"
+	var/smell_clean_time = 10 MINUTES
 
 /obj/item/weapon/reagent_containers/pill/detergent/New()
 	..()

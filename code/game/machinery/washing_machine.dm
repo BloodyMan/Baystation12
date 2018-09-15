@@ -21,7 +21,7 @@
 	//1 = hacked
 	var/gibs_ready = 0
 	var/obj/crayon
-	var/obj/detergent
+	var/obj/item/weapon/reagent_containers/pill/detergent/detergent
 	obj_flags = OBJ_FLAG_ANCHORABLE
 	clicksound = "button"
 	clickvol = 40
@@ -29,7 +29,7 @@
 	// Power
 	use_power = 1
 	idle_power_usage = 10
-	var/vend_power_usage = 150 //actuators and stuff
+	active_power_usage = 150
 
 /obj/machinery/washing_machine/Destroy()
 	QDEL_NULL(crayon)
@@ -44,21 +44,32 @@
 	if(!istype(usr, /mob/living)) //ew ew ew usr, but it's the only way to check.
 		return
 
+	if(!anchored)
+		to_chat(usr, "The [src] must be secured to the floor.")
+		return
+
 	if( state != 4 )
-		to_chat(usr, "The washing machine cannot run in this state.")
+		to_chat(usr, "The [src] cannot run in this state.")
+		return
+
+	if(!powered())
+		to_chat(usr, "The [src] is unpowered.")
 		return
 
 	if( locate(/mob,contents) )
 		state = 8
 	else
 		state = 5
+	use_power = 2
 	update_icon()
 	sleep(200)
 	for(var/atom/A in contents)
-		A.clean_blood()
+		if(detergent)
+			A.clean_blood()
 		if(isitem(A))
 			var/obj/item/I = A
-			I.decontaminate()
+			if(detergent)
+				I.decontaminate()
 			if(crayon && iscolorablegloves(I))
 				var/obj/item/clothing/gloves/C = I
 				C.color = crayon.color
@@ -66,7 +77,9 @@
 				var/obj/item/clothing/C = A
 				C.ironed_state = WRINKLES_WRINKLY
 				if(detergent)
-					C.detergent_state = DETERGENT_CLEAN
+					C.change_smell(SMELL_CLEAN)
+					addtimer(CALLBACK(C, /obj/item/clothing/proc/change_smell), detergent.smell_clean_time, TIMER_UNIQUE | TIMER_OVERRIDE)
+	QDEL_NULL(detergent)
 
 	//Tanning!
 	for(var/obj/item/stack/material/hairlesshide/HH in contents)
@@ -74,6 +87,7 @@
 		WL.amount = HH.amount
 		qdel(HH)
 
+	use_power = 1
 	if( locate(/mob,contents) )
 		state = 7
 		gibs_ready = 1
@@ -96,7 +110,7 @@
 
 /obj/machinery/washing_machine/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/weapon/pen/crayon))
-		if( state in list(	1, 3, 6 ) )
+		if(state in list(1, 3, 6))
 			if(!crayon)
 				if(!user.unEquip(W, src))
 					return
@@ -106,7 +120,7 @@
 		else
 			..()
 	else if(istype(W,/obj/item/weapon/reagent_containers/pill/detergent))
-		if( state in list(	1, 3, 6 ) )
+		if(state in list(1, 3, 6))
 			if(!detergent)
 				if(!user.unEquip(W, src))
 					return
@@ -116,11 +130,16 @@
 		else
 			..()
 	else if((obj_flags & OBJ_FLAG_ANCHORABLE) && isWrench(W))
-		wrench_floor_bolts(user)
-		power_change()
-		return
+		if(state in list( 5, 8 ))
+			to_chat(user, "<span class='warning'>The [src] is currently running.</span>")
+			return
+		else
+			wrench_floor_bolts(user)
+			use_power = anchored
+			power_change()
+			return
 	else if(istype(W,/obj/item/grab))
-		if( (state == 1) && hacked)
+		if((state == 1) && hacked)
 			var/obj/item/grab/G = W
 			if(ishuman(G.assailant) && iscorgi(G.affecting))
 				G.affecting.loc = src
@@ -198,6 +217,7 @@
 			for(var/atom/movable/O in contents)
 				O.forceMove(get_turf(src))
 			crayon = null
+			detergent = null
 			state = 1
 		if(5)
 			to_chat(user, "<span class='warning'>The [src] is busy.</span>")

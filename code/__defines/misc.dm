@@ -231,9 +231,9 @@
 #define WRINKLES_NONE		2
 
 //detergent states for clothes
-#define DETERGENT_DEFAULT	0
-#define DETERGENT_CLEAN		1
-#define DETERGENT_STINKY	2
+#define SMELL_DEFAULT	0
+#define SMELL_CLEAN		1
+#define SMELL_STINKY	2
 
 //Shuttle mission stages
 #define SHUTTLE_MISSION_PLANNED  1
