@@ -77,9 +77,9 @@
 		to_chat(user, "\icon[A] \A [A] is attached to it.")
 	switch(detergent_state)
 		if(DETERGENT_CLEAN)
-			to_chat(user, "<span class='bad'>It smells clean.</span>")
+			to_chat(user, "<span class='notice'>It smells clean!</span>")
 		if(DETERGENT_STINKY)
-			to_chat(user, "<span class='notice'>It's quite stinky!</span>")
+			to_chat(user, "<span class='bad'>It's quite stinky!</span>")
 
 /obj/item/clothing/proc/update_accessory_slowdown()
 	slowdown_accessory = 0

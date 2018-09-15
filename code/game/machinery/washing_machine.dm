@@ -23,6 +23,13 @@
 	var/obj/crayon
 	var/obj/detergent
 	obj_flags = OBJ_FLAG_ANCHORABLE
+	clicksound = "button"
+	clickvol = 40
+
+	// Power
+	use_power = 1
+	idle_power_usage = 10
+	var/vend_power_usage = 150 //actuators and stuff
 
 /obj/machinery/washing_machine/Destroy()
 	QDEL_NULL(crayon)
