@@ -45,15 +45,15 @@
 		return
 
 	if(!anchored)
-		to_chat(usr, "The [src] must be secured to the floor.")
+		to_chat(usr, "\The [src] must be secured to the floor.")
 		return
 
 	if( state != 4 )
-		to_chat(usr, "The [src] cannot run in this state.")
+		to_chat(usr, "\The [src] cannot run in this state.")
 		return
 
 	if(!powered())
-		to_chat(usr, "The [src] is unpowered.")
+		to_chat(usr, SPAN_WARNING("\The [src] is unpowered."))
 		return
 
 	if( locate(/mob,contents) )
@@ -62,7 +62,9 @@
 		state = 5
 	use_power = 2
 	update_icon()
-	sleep(200)
+	addtimer(CALLBACK(src, /obj/machinery/washing_machine/proc/wash), 20 SECONDS, TIMER_UNIQUE)
+
+/obj/machinery/washing_machine/proc/wash()
 	for(var/atom/A in contents)
 		if(detergent)
 			A.clean_blood()
@@ -131,7 +133,7 @@
 			..()
 	else if((obj_flags & OBJ_FLAG_ANCHORABLE) && isWrench(W))
 		if(state in list( 5, 8 ))
-			to_chat(user, "<span class='warning'>The [src] is currently running.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is currently running."))
 			return
 		else
 			wrench_floor_bolts(user)
@@ -195,9 +197,9 @@
 					return
 				state = 3
 			else
-				to_chat(user, "<span class='notice'>You can't put the item in right now.</span>")
+				to_chat(user, SPAN_NOTICE("You can't put the item in right now."))
 		else
-			to_chat(user, "<span class='notice'>The washing machine is full.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] is full"))
 	else
 		..()
 	update_icon()
@@ -222,7 +224,7 @@
 			detergent = null
 			state = 1
 		if(5)
-			to_chat(user, "<span class='warning'>The [src] is busy.</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is busy."))
 		if(6)
 			state = 7
 		if(7)
