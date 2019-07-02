@@ -3060,6 +3060,7 @@
 #include "maps\torch\game\antagonist\outsider\raider.dm"
 #include "maps\torch\language\human\euro.dm"
 #include "maps\torch\language\human\misc\spacer.dm"
+#include "maps\whales\whale1_deck1.dmm"
 #include "maps\~mapsystem\map_preferences.dm"
 #include "maps\~mapsystem\map_ranks.dm"
 #include "maps\~mapsystem\maps.dm"
