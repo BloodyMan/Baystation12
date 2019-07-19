@@ -670,7 +670,7 @@ obj/random/obstruction/spawn_choices()
 	icon_state = "sosjerky"
 
 /obj/random/snack/spawn_choices()
-	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood,
+	return list(/obj/item/weapon/reagent_containers/food/snacks/junk/liquidfood,
 				/obj/item/weapon/reagent_containers/food/snacks/candy,
 				/obj/item/weapon/reagent_containers/food/drinks/dry_ramen,
 				/obj/item/weapon/reagent_containers/food/snacks/chips,

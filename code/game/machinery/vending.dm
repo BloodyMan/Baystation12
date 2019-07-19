@@ -719,16 +719,16 @@
 	products = list(/obj/item/clothing/mask/chewable/candy/lolli = 8,
 					/obj/item/weapon/storage/chewables/candy/gum = 4,
 					/obj/item/weapon/storage/chewables/candy/cookies = 4,
-					/obj/item/weapon/reagent_containers/food/snacks/candy = 6,/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 6,/obj/item/weapon/reagent_containers/food/snacks/chips =6,
-					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 6,/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 6,/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 6,
-					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 6, /obj/item/weapon/reagent_containers/food/snacks/tastybread = 6)
-	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/syndicake = 6, /obj/item/weapon/reagent_containers/food/snacks/skrellsnacks = 3)
+					/obj/item/weapon/reagent_containers/food/snacks/junk/candy = 6,/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 6,/obj/item/weapon/reagent_containers/food/snacks/junk/chips =6,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/sosjerky = 6,/obj/item/weapon/reagent_containers/food/snacks/junk/no_raisin = 6,/obj/item/weapon/reagent_containers/food/snacks/junk/spacetwinkie = 6,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/cheesiehonkers = 6, /obj/item/weapon/reagent_containers/food/snacks/junk/tastybread = 6)
+	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/junk/syndicake = 6, /obj/item/weapon/reagent_containers/food/snacks/junk/skrellsnacks = 3)
 	prices = list(/obj/item/clothing/mask/chewable/candy/lolli = 2,
 					/obj/item/weapon/storage/chewables/candy/gum = 4,
 					/obj/item/weapon/storage/chewables/candy/cookies = 4,
-					/obj/item/weapon/reagent_containers/food/snacks/candy = 1,/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 5,/obj/item/weapon/reagent_containers/food/snacks/chips = 1,
-					/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 2,/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 1,/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 1,
-					/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 1, /obj/item/weapon/reagent_containers/food/snacks/tastybread = 2)
+					/obj/item/weapon/reagent_containers/food/snacks/junk/candy = 1,/obj/item/weapon/reagent_containers/food/drinks/dry_ramen = 5,/obj/item/weapon/reagent_containers/food/snacks/junk/chips = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/sosjerky = 2,/obj/item/weapon/reagent_containers/food/snacks/junk/no_raisin = 1,/obj/item/weapon/reagent_containers/food/snacks/junk/spacetwinkie = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/cheesiehonkers = 1, /obj/item/weapon/reagent_containers/food/snacks/junk/tastybread = 2)
 
 
 
@@ -746,7 +746,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 10,/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 10,/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 10, /obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 10)
-	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 5, /obj/item/weapon/reagent_containers/food/snacks/liquidfood = 6)
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 5, /obj/item/weapon/reagent_containers/food/snacks/junk/liquidfood = 6)
 	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 1,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 1,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 2,/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 1,
@@ -768,7 +768,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/proteinshake = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/candy/proteinbar = 8,
 					/obj/item/weapon/storage/mre/random = 8,
 					/obj/item/weapon/storage/mre/menu9 = 4,
 					/obj/item/weapon/storage/mre/menu10 = 4,
@@ -780,7 +780,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/proteinshake = 20,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask = 5,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 5,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/candy/proteinbar = 5,
 					/obj/item/weapon/storage/mre/random = 50,
 					/obj/item/weapon/storage/mre/menu9 = 50,
 					/obj/item/weapon/storage/mre/menu10 = 50,
@@ -940,7 +940,9 @@
 		/obj/item/weapon/storage/med_pouch/oxyloss,
 		/obj/item/weapon/storage/med_pouch/toxin
 		)
-	contraband = list(/obj/item/weapon/reagent_containers/syringe/antitoxin = 4,/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/pill/tox = 1)
+	contraband = list(/obj/item/weapon/reagent_containers/syringe/antitoxin = 4,
+					/obj/item/weapon/reagent_containers/syringe/antiviral = 4,
+					/obj/item/weapon/reagent_containers/pill/tox = 1)
 
 /obj/machinery/vending/wallmed2
 	name = "NanoMed Mini"
@@ -961,7 +963,8 @@
 		/obj/item/weapon/storage/med_pouch/toxin,
 		/obj/item/weapon/storage/med_pouch/radiation
 		)
-	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3, /obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2)
+	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2)
 
 /obj/machinery/vending/security
 	name = "SecTech"
@@ -1312,16 +1315,16 @@
 	icon_state = "snix"
 	icon_vend = "snix-vend"
 	icon_deny = "snix-deny"
-	products = list(/obj/item/weapon/reagent_containers/food/snacks/semki = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/canned/caviar = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/squid = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/croutons = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/salo = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/driedfish = 7,
-					/obj/item/weapon/reagent_containers/food/snacks/pistachios = 7,
+	products = list(/obj/item/weapon/reagent_containers/food/snacks/junk/semki = 7,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/canned/caviar = 7,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/squid = 7,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/croutons = 7,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/salo = 7,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/driedfish = 7,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/pistachios = 7,
 					)
 
-	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/canned/caviar/true = 1)
+	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/junk/canned/caviar/true = 1)
 
 /obj/machinery/vending/snix/on_update_icon()
 	..()
@@ -1336,28 +1339,28 @@
 	icon_state = "solsnack"
 	icon_vend = "solsnack-vend"
 	icon_deny = "solsnack-deny"
-	products = list(/obj/item/weapon/reagent_containers/food/snacks/lunacake = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/lunacake/mochicake = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/lunacake/mooncake = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/pluto = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/triton = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/saturn = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/jupiter = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/mars = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/venus = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/oort = 8
+	products = list(/obj/item/weapon/reagent_containers/food/snacks/junk/lunacake = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/lunacake/mochicake = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/lunacake/mooncake = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/pluto = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/triton = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/saturn = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/jupiter = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/mars = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/venus = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/oort = 8
 					)
 
-	prices = list(/obj/item/weapon/reagent_containers/food/snacks/lunacake = 12,
-					/obj/item/weapon/reagent_containers/food/snacks/lunacake/mochicake = 12,
-					/obj/item/weapon/reagent_containers/food/snacks/lunacake/mooncake = 12,
-					/obj/item/weapon/reagent_containers/food/snacks/pluto = 12,
-					/obj/item/weapon/reagent_containers/food/snacks/triton = 12,
-					/obj/item/weapon/reagent_containers/food/snacks/saturn = 12,
-					/obj/item/weapon/reagent_containers/food/snacks/jupiter = 12,
-					/obj/item/weapon/reagent_containers/food/snacks/mars = 12,
-					/obj/item/weapon/reagent_containers/food/snacks/venus = 12,
-					/obj/item/weapon/reagent_containers/food/snacks/oort = 12
+	prices = list(/obj/item/weapon/reagent_containers/food/snacks/junk/lunacake = 12,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/lunacake/mochicake = 12,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/lunacake/mooncake = 12,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/pluto = 12,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/triton = 12,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/saturn = 12,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/jupiter = 12,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/mars = 12,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/venus = 12,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/oort = 12
 	)
 
 /obj/machinery/vending/weeb
@@ -1368,18 +1371,18 @@
 	icon_state = "weeb"
 	icon_vend = "weeb-vend"
 	icon_deny = "weeb-deny"
-	products = list(/obj/item/weapon/reagent_containers/food/snacks/weebonuts = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/ricecake = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/dango = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/pokey = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/chocobanana = 8
+	products = list(/obj/item/weapon/reagent_containers/food/snacks/junk/weebonuts = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/ricecake = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/dango = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/pokey = 8,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/chocobanana = 8
 					)
 
-	prices = list(/obj/item/weapon/reagent_containers/food/snacks/weebonuts = 80,
-					/obj/item/weapon/reagent_containers/food/snacks/ricecake = 80,
-					/obj/item/weapon/reagent_containers/food/snacks/dango = 80,
-					/obj/item/weapon/reagent_containers/food/snacks/pokey = 80,
-					/obj/item/weapon/reagent_containers/food/snacks/chocobanana = 80
+	prices = list(/obj/item/weapon/reagent_containers/food/snacks/junk/weebonuts = 80,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/ricecake = 80,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/dango = 80,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/pokey = 80,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/chocobanana = 80
 	)
 
 /obj/machinery/vending/weeb/on_update_icon()
@@ -1396,12 +1399,12 @@
 	icon_state = "hotfood"
 	icon_deny = "hotfood-deny"
 	icon_vend = "hotfood-vend"
-	products = list(/obj/item/weapon/reagent_containers/food/snacks/old/pizza = 1,
-					/obj/item/weapon/reagent_containers/food/snacks/old/burger = 1,
-					/obj/item/weapon/reagent_containers/food/snacks/old/hamburger = 1,
-					/obj/item/weapon/reagent_containers/food/snacks/old/fries = 1,
-					/obj/item/weapon/reagent_containers/food/snacks/old/hotdog = 1,
-					/obj/item/weapon/reagent_containers/food/snacks/old/taco = 1
+	products = list(/obj/item/weapon/reagent_containers/food/snacks/junk/old/pizza = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/old/burger = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/old/hamburger = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/old/fries = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/old/hotdog = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/junk/old/taco = 1
 					)
 
 /obj/machinery/vending/hotfood/on_update_icon()

@@ -32,8 +32,8 @@
 	icon_state = "donk"
 
 /obj/item/weapon/reagent_containers/food/snacks/variable/kebab
-	name = "kebab"
-	desc = "Remove this!"
+	name = "shish kebab"
+	desc = "Meat and vegs cooked on a skewer."
 	icon_state = "kabob"
 
 /obj/item/weapon/reagent_containers/food/snacks/variable/waffles

@@ -53,18 +53,6 @@
 	name = "syndi cakes"
 	icon_state = "syndi_cakes"
 
-/obj/item/trash/waffles
-	name = "waffles"
-	icon_state = "waffles"
-
-/obj/item/trash/plate
-	name = "plate"
-	icon_state = "plate"
-
-/obj/item/trash/snack_bowl
-	name = "snack bowl"
-	icon_state	= "snack_bowl"
-
 /obj/item/trash/pistachios
 	name = "pistachios pack"
 	icon_state = "pistachios_pack"
